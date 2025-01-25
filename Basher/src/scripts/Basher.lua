@@ -242,7 +242,7 @@ function Basher_Setup()
     elseif gmcp.Char.Status.class == "Apostate" then
       Legacy.Settings.Basher.Classes["Apostate"].convulsions = {cmd = "stare @tar convulsions", rage = 14, desc = "Small Damage", available = true }
       Legacy.Settings.Basher.Classes["Apostate"].horrify = {cmd = "stare @tar horrify", rage = 29, desc = "Gives Affliction", aff = "fear", available = true }
-      Legacy.Settings.Basher.Classes["Apostate"].shieldbreak = {cmd = "shieldbreak @tar", rage = 17, desc = "Shieldbreak", available = true }
+      Legacy.Settings.Basher.Classes["Apostate"].daeggerpierce = {cmd = "daegger pierce @tar", rage = 17, desc = "Shieldbreak", available = true }
       Legacy.Settings.Basher.Classes["Apostate"].burrow = {cmd = "daegger burrow @tar", rage = 36, desc = "Big Damage", available = true }
       Legacy.Settings.Basher.Classes["Apostate"].bloodlet = {cmd = "bloodlet @tar", rage = 25, desc = "Conditional", needs = {"sensitivity", "stun"}, available = true}
       Legacy.Settings.Basher.Classes["Apostate"].possess = {cmd = "possess @tar", rage = 32, desc = "Gives Affliction", aff = "charm", available = true}
@@ -403,7 +403,7 @@ function Basher_Setup()
     elseif gmcp.Char.Status.class == "Sylvan" then
 	    Legacy.Settings.Basher.Classes["Sylvan"].torrent = {cmd = "cast torrent at @tar", rage = 14, desc = "Small Damage", available = true }
       Legacy.Settings.Basher.Classes["Sylvan"].sandstorm = {cmd = "cast sandstorm at @tar", rage = 29, desc = "Gives Affliction", aff = "fear", available = true }
-      Legacy.Settings.Basher.Classes["Sylvan"].shieldbreak = {cmd = "shieldbreak @tar", rage = 17, desc = "Shieldbreak", available = true }
+      Legacy.Settings.Basher.Classes["Sylvan"].thornpierce = {cmd = "thornpiece @tar", rage = 17, desc = "Shieldbreak", available = true }
       Legacy.Settings.Basher.Classes["Sylvan"].stonevine = {cmd = "stonevine @tar", rage = 36, desc = "Big Damage", available = true }
       Legacy.Settings.Basher.Classes["Sylvan"].leechroot = {cmd = "leechroot @tar", rage = 25, desc = "Conditional", needs = {"inhibit", "weakness"}, available = true }
       Legacy.Settings.Basher.Classes["Sylvan"].rockshot = {cmd = "cast rockshot at @tar", rage = 18, desc = "Gives Affliction", aff = "amnesia", available = true }
@@ -472,42 +472,74 @@ function Basher_Setup()
       Legacy.Settings.Basher.Classes["Green Dragon"].dragonsap = {cmd = "dragonsap @tar", rage = 22, desc = "Gives Affliction", aff = "inhibit", available = true }
       Legacy.Settings.Basher.Classes["Green Dragon"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
       Legacy.Settings.Basher.Classes["Green Dragon"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
-    elseif gmcp.Char.Status.class == "water Elemental Lord" then
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].icicles = {cmd = "manifest icicles @tar", rage = 14, desc = "Small Damage", available = true }
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].dehydrate = {cmd = "manifest dehydrate @tar", rage = 14, desc = "Gives Affliction", aff = "clumsiness", available = true }
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].aquahammer = {cmd = "manifest aquahammer @tar", rage = 17, desc = "Shieldbreak", available = true }
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].needlerain = {cmd = "manifest needlerain @tar", rage = 36, desc = "Big Damage", available = true }
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].waterfall = {cmd = "manifest waterfall @tar", rage = 25, desc = "Conditional", needs = {"weakness", "aeon"}, available = true }
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].swell = {cmd = "manifest swell @tar", rage = 30, desc = "Buff", available = true }
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
-      Legacy.Settings.Basher.Classes["water Elemental Lord"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
-    elseif gmcp.Char.Status.class == "air Elemental Lord" then
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].bolt = {cmd = "manifest bolt @tar", rage = 14, desc = "Small Damage", available = true }
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].vacuum = {cmd = "manifest vacuum @tar", rage = 18, desc = "Gives Affliction", aff = "inhibit", available = true }
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].drill = {cmd = "manifest drill @tar", rage = 17, desc = "Shieldbreak", available = true }
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].pressurewave = {cmd = "manifest pressurewave @tar", rage = 36, desc = "Big Damage", available = true }
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].compress = {cmd = "aero compress @tar", rage = 25, desc = "Conditional", needs = {"stunned", "sensitivity"}, available = true }
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].suffocate = {cmd = "aero suffocate @tar", rage = 22, desc = "Gives Affliction", aff = "inhibit", available = true }
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
-      Legacy.Settings.Basher.Classes["air Elemental Lord"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
-    elseif gmcp.Char.Status.class == "fire Elemental Lord" then
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].dragonspit = {cmd = "dragonspit @tar", rage = 14, desc = "Small Damage", available = true }
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].scour = {cmd = "scour @tar", rage = 18, desc = "Gives Affliction", aff = "recklessness", available = true }
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].deteriorate = {cmd = "deteriorate @tar", rage = 17, desc = "Shieldbreak", available = true }
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].override = {cmd = "override @tar", rage = 36, desc = "Big Damage", available = true }
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].slaver = {cmd = "slaver @tar", rage = 25, desc = "Conditional", needs = {"sensitivity", "clumsiness"}, available = true }
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].dragonsap = {cmd = "dragonsap @tar", rage = 22, desc = "Gives Affliction", aff = "inhibit", available = true }
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
-      Legacy.Settings.Basher.Classes["fire Elemental Lord"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
-    elseif gmcp.Char.Status.class == "earth Elemental Lord" then
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].smash = {cmd = "terran smash @tar", rage = 14, desc = "Small Damage", available = true }
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].rockfall = {cmd = "manifest rockfall @tar", rage = 18, desc = "Gives Affliction", aff = "stun", available = true }
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].charge = {cmd = "terran charge @tar", rage = 17, desc = "Shieldbreak", available = true }
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].flurry = {cmd = "terran flurry @tar", rage = 36, desc = "Big Damage", available = true }
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].magmaburst = {cmd = "manifest magmaburst @tar", rage = 25, desc = "Conditional", needs = {"recklessness", "clumsiness"}, available = true }
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].rampart = {cmd = "terran rampart @tar", rage = 22, desc = "Buff", available = true }
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
-      Legacy.Settings.Basher.Classes["earth Elemental Lord"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
+    elseif gmcp.Char.Status.class == "water Elemental Lord" or gmcp.Char.Status.class == 'water Elemental Lady' then
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].icicles = {cmd = "manifest icicles @tar", rage = 14, desc = "Small Damage", available = true }
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].icicles = {cmd = "manifest icicles @tar", rage = 14, desc = "Small Damage", available = true }
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].dehydrate = {cmd = "manifest dehydrate @tar", rage = 14, desc = "Gives Affliction", aff = "clumsiness", available = true }
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].dehydrate = {cmd = "manifest dehydrate @tar", rage = 14, desc = "Gives Affliction", aff = "clumsiness", available = true }
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].aquahammer = {cmd = "manifest aquahammer @tar", rage = 17, desc = "Shieldbreak", available = true }
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].aquahammer = {cmd = "manifest aquahammer @tar", rage = 17, desc = "Shieldbreak", available = true }
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].needlerain = {cmd = "manifest needlerain @tar", rage = 36, desc = "Big Damage", available = true }
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].needlerain = {cmd = "manifest needlerain @tar", rage = 36, desc = "Big Damage", available = true }
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].waterfall = {cmd = "manifest waterfall @tar", rage = 25, desc = "Conditional", needs = {"weakness", "aeon"}, available = true }
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].waterfall = {cmd = "manifest waterfall @tar", rage = 25, desc = "Conditional", needs = {"weakness", "aeon"}, available = true }
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].swell = {cmd = "manifest swell @tar", rage = 30, desc = "Buff", available = true }
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].swell = {cmd = "manifest swell @tar", rage = 30, desc = "Buff", available = true }
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+      Legacy.Settings.Basher.Classes["water Elemental Lord "].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
+			Legacy.Settings.Basher.Classes["water Elemental Lady"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
+    elseif gmcp.Char.Status.class == "air Elemental Lord" or gmcp.Char.Status.class == 'air Elemental Lady' then
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].bolt = {cmd = "manifest bolt @tar", rage = 14, desc = "Small Damage", available = true }
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].bolt = {cmd = "manifest bolt @tar", rage = 14, desc = "Small Damage", available = true }
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].vacuum = {cmd = "manifest vacuum @tar", rage = 18, desc = "Gives Affliction", aff = "inhibit", available = true }
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].vacuum = {cmd = "manifest vacuum @tar", rage = 18, desc = "Gives Affliction", aff = "inhibit", available = true }
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].drill = {cmd = "manifest drill @tar", rage = 17, desc = "Shieldbreak", available = true }
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].drill = {cmd = "manifest drill @tar", rage = 17, desc = "Shieldbreak", available = true }
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].pressurewave = {cmd = "manifest pressurewave @tar", rage = 36, desc = "Big Damage", available = true }
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].pressurewave = {cmd = "manifest pressurewave @tar", rage = 36, desc = "Big Damage", available = true }
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].compress = {cmd = "aero compress @tar", rage = 25, desc = "Conditional", needs = {"stunned", "sensitivity"}, available = true }
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].compress = {cmd = "aero compress @tar", rage = 25, desc = "Conditional", needs = {"stunned", "sensitivity"}, available = true }
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].suffocate = {cmd = "aero suffocate @tar", rage = 22, desc = "Gives Affliction", aff = "inhibit", available = true }
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].suffocate = {cmd = "aero suffocate @tar", rage = 22, desc = "Gives Affliction", aff = "inhibit", available = true }
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+      Legacy.Settings.Basher.Classes["air Elemental Lord "].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
+			Legacy.Settings.Basher.Classes["air Elemental Lady"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
+    elseif gmcp.Char.Status.class == "fire Elemental Lord" or gmcp.Char.Status.class == 'fire Elemental Lady' then
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].engulf = {cmd = "manifest engulf @tar", rage = 14, desc = "Small Damage", available = true }
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].engulf = {cmd = "manifest engulf @tar", rage = 14, desc = "Small Damage", available = true }
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].scourge = {cmd = "manifest scourge @tar", rage = 25, desc = "Gives Affliction", aff = "sensitivity", available = true }
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].scourge = {cmd = "manifest scourge @tar", rage = 25, desc = "Gives Affliction", aff = "sensitivity", available = true }
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].wires = {cmd = "manifest wires @tar", rage = 17, desc = "Shieldbreak", available = true }
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].wires = {cmd = "manifest wires @tar", rage = 17, desc = "Shieldbreak", available = true }
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].devastation = {cmd = "manifest devastation @tar", rage = 36, desc = "Big Damage", available = true }
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].devastation = {cmd = "manifest devastation @tar", rage = 36, desc = "Big Damage", available = true }
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].cataclysm = {cmd = "manifest cataclysm @tar", rage = 25, desc = "Conditional", needs = {"stunned", "recklessness"}, available = true }
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].cataclysm = {cmd = "manifest cataclysm @tar", rage = 25, desc = "Conditional", needs = {"stunned", "recklessness"}, available = true }
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].bonds = {cmd = "manifest bonds @tar", rage = 30, desc = "Small Damage", available = true }
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].bonds = {cmd = "manifest bonds @tar", rage = 30, desc = "Small Damage", available = true }
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+      Legacy.Settings.Basher.Classes["fire Elemental Lord "].nrshieldbreak = {cmd = "manifest superheat @tar", rage = 0, desc = "Raze"}
+			Legacy.Settings.Basher.Classes["fire Elemental Lady"].nrshieldbreak = {cmd = "manifest superheat @tar", rage = 0, desc = "Raze"}
+    elseif gmcp.Char.Status.class == "earth Elemental Lord" or gmcp.Char.Status.class == 'earth Elemental Lady' then
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].smash = {cmd = "terran smash @tar", rage = 14, desc = "Small Damage", available = true }
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].smash = {cmd = "terran smash @tar", rage = 14, desc = "Small Damage", available = true }
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].rockfall = {cmd = "manifest rockfall @tar", rage = 18, desc = "Gives Affliction", aff = "stun", available = true }
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].rockfall = {cmd = "manifest rockfall @tar", rage = 18, desc = "Gives Affliction", aff = "stun", available = true }
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].charge = {cmd = "terran charge @tar", rage = 17, desc = "Shieldbreak", available = true }
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].charge = {cmd = "terran charge @tar", rage = 17, desc = "Shieldbreak", available = true }
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].flurry = {cmd = "terran flurry @tar", rage = 36, desc = "Big Damage", available = true }
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].flurry = {cmd = "terran flurry @tar", rage = 36, desc = "Big Damage", available = true }
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].magmaburst = {cmd = "manifest magmaburst @tar", rage = 25, desc = "Conditional", needs = {"recklessness", "clumsiness"}, available = true }
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].magmaburst = {cmd = "manifest magmaburst @tar", rage = 25, desc = "Conditional", needs = {"recklessness", "clumsiness"}, available = true }
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].rampart = {cmd = "terran rampart @tar", rage = 22, desc = "Buff", available = true }
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].rampart = {cmd = "terran rampart @tar", rage = 22, desc = "Buff", available = true }
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].configRage = {bigDamage = 20, smallDamage = 0, affAttack = 100}
+      Legacy.Settings.Basher.Classes["earth Elemental Lord "].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
+			Legacy.Settings.Basher.Classes["earth Elemental Lady"].nrshieldbreak = {cmd = "", rage = 0, desc = "Raze"}
         
     end
   end 
