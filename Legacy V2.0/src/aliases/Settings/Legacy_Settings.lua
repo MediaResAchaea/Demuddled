@@ -23,6 +23,14 @@ if Legacy then
     cechoLink(" <red>X", function() Legacy.Settings.Curing.precache = true expandAlias("legacy")  end, "Click to turn on Precaching", true)
     cecho("<ansi_white> Enable Precaching.\n")
   end
+
+  if Legacy.Settings.Curing.slowcure == true then
+    cechoLink(" <green>O", function() Legacy.Settings.Curing.slowcure = false expandAlias("legacy")  end, "Click to turn off Legacy can do slowcuring mode", true)
+    cecho("<ansi_white> Disable Legacy being able to activate slowcuring mode in ret/aeon.\n")
+  else
+    cechoLink(" <red>X", function() Legacy.Settings.Curing.slowcure = true expandAlias("legacy")  end, "Click to turn on Legacy being able to do slowcuring mode", true)
+    cecho("<ansi_white> Enable Legacy being able to activate slowcuring mode in ret/aeon.\n")
+  end
   
   if Legacy.Settings.Curing.ttsAffs == true then
       cechoLink(" <green>O", function() Legacy.Settings.Curing.ttsAffs = false expandAlias("legacy")  end, "Click to turn off Text to speech affliction calling.", true)

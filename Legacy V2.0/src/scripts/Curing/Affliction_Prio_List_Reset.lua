@@ -5,6 +5,8 @@ function Curing_Reset()
        priostr = priostr..aff.." "..prio.." "
   end
   send(priostr, false)
-  tempTimer(20, function() gagprios = false end, true)
+  tempTimer(20, function() 
+      gagprios = false 
+    end)
 end
 registerAnonymousEventHandler("CuringReset", "Curing_Reset")

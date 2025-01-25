@@ -6,6 +6,7 @@ Legacy.Curing.Affs = Legacy.Curing.Affs or {}
   if gmcp.Char.Afflictions.Add.name == "aeon" then
     Legacy.bigEcho("GAINED AEON STARTING SLOWCURE")
     send("curing batch off")
+    Prio("asthma")
   end
   
   if table.contains(Legacy.Curing.Affs, gmcp.Char.Afflictions.Add.name) then

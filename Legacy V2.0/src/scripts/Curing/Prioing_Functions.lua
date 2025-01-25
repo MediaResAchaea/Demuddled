@@ -36,14 +36,15 @@ end
 
 function Prio(aff, pos)
   if pos == nil then pos = 1 end
-  Legacy.echo(pos)
   Legacy.Curing.Prios.PrioUpdates = Legacy.Curing.Prios.PrioUpdates or {}
   local aff = aff:title()
   if Legacy.Curing.Prios.temp[aff] ~= pos and not table.contains(Legacy.Curing.Prios.PrioUpdates, aff.." "..pos) then
     table.insert(Legacy.Curing.Prios.PrioUpdates, aff.." "..pos)
     Legacy.Curing.Prios.temp[aff] = pos
+    Legacy.echo(pos)
   end
 end
+
 function UpdatePrios()
 if Legacy == nil then return end
   Legacy.Curing.Prios.PrioUpdates = Legacy.Curing.Prios.PrioUpdates or {}

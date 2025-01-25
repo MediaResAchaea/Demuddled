@@ -98,3 +98,5 @@ else
 tempTimer(5, [[Legacy_AK_Draw()]])
 end
 end
+
+registerAnonymousEventHandler("LegacyLoaded", "Legacy_AK_Draw")

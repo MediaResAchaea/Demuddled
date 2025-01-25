@@ -162,7 +162,7 @@ function Basher_Setup()
   if Legacy.Settings.Basher.status == false then return end
   if gmcp.IRE.Target then
   if Legacy.Settings.Basher.fleeing == true then return end
-  if Legacy[gmcp.Char.Status.name].Vitals.hpPer <= math.floor(tonumber(Legacy.Settings.Basher.fleeAt) + 2) and Legacy.Settings.Basher.flee == true then Legacy.bigEcho("Flee! Run for your life!!", "gold", "red") Legacy.Basher.flee(gmcp.Room.Info.num) Legacy.Settings.Basher.fleeing = true return end
+  if Legacy[gmcp.Char.Status.name].Vitals.hpPer <= math.floor(tonumber(Legacy.Settings.Basher.fleeAt) + 2) and not Legacy.Curing.Affs.blackout and Legacy.Settings.Basher.flee == true then Legacy.bigEcho("Flee! Run for your life!!", "gold", "red") Legacy.Basher.flee(gmcp.Room.Info.num) Legacy.Settings.Basher.fleeing = true return end
   if Legacy.Settings.Basher.status == true then
     if (gmcp.Char.Vitals.eq or gmcp.Char.Vitals.bal) == "0" then return end
     if (gmcp.Char.Vitals.eq and gmcp.Char.Vitals.bal) == "1" then attacked = false end

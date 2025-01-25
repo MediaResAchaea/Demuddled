@@ -666,11 +666,12 @@ registerAnonymousEventHandler("gmcp.Char.Items", "Legacy.UI.Mobs")
 registerAnonymousEventHandler("gmcp.Char.Vitals", "Legacy.UI.Items")
 
 
-  function Legacy.UI.Bars()
+function Legacy.UI.Bars()
   if HPBar == nil then return end
   if MPBar == nil then return end
     if tonumber(gmcp.Char.Vitals.hp) > tonumber(gmcp.Char.Vitals.maxhp) then
       HPBar:setValue(tonumber(gmcp.Char.Vitals.maxhp) ,tonumber(gmcp.Char.Vitals.maxhp))
+      HPBar:setColor("orange")
       HPBar:setBold(true)
       HPBar:setFontSize("13")
       HPBar:setFgColor("black")
@@ -684,6 +685,7 @@ registerAnonymousEventHandler("gmcp.Char.Vitals", "Legacy.UI.Items")
       HPBar:setText("<center>Health "..gmcp.Char.Vitals.hp.."/"..gmcp.Char.Vitals.maxhp.." "..math.floor((tonumber(gmcp.Char.Vitals.hp)/tonumber(gmcp.Char.Vitals.maxhp)* 100)).."%")
     else
       HPBar:setValue(tonumber(gmcp.Char.Vitals.hp) ,tonumber(gmcp.Char.Vitals.maxhp))
+      HPBar:setColor("forest_green")
       HPBar:setBold(true)
       HPBar:setFontSize("13")
       HPBar:setFgColor("black")
@@ -705,7 +707,8 @@ registerAnonymousEventHandler("gmcp.Char.Vitals", "Legacy.UI.Items")
       MPBar:setText("<center>Mana "..gmcp.Char.Vitals.mp.."/"..gmcp.Char.Vitals.maxmp.." "..math.floor((tonumber(gmcp.Char.Vitals.mp)/tonumber(gmcp.Char.Vitals.maxmp)* 100)).."%")
     end
   end
-registerAnonymousEventHandler("gmcp.Char.Vitals", "Legacy.UI.Bars")
+   registerAnonymousEventHandler("gmcp.Char.Vitals", "Legacy.UI.Bars")
+   
   function Legacy.UI.Update()
     --setBorderLeft(310)
     --setWindowWrap(100)

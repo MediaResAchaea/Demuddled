@@ -4,6 +4,7 @@ function Aff_Remove()
     Legacy.Curing.Affs[gmcp.Char.Afflictions.Remove[1]] = nil
     if gmcp.Char.Afflictions.Remove[1] == "aeon" and Legacy.Settings.Curing.slowcure then
       Legacy.bigEcho("Cured Aeon, resuming normal curing.")
+      Reprio("asthma")
     end
   end
   if Legacy.Settings.Curing.SS.Settings.batch == true and Legacy.Curing.Affs["aeon"] then

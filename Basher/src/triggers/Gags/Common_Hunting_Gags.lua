@@ -1,1 +1,1 @@
-deleteFull()
+deleteLine()

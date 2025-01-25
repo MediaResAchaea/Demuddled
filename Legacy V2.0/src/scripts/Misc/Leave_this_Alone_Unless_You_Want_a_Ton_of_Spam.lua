@@ -1,4 +1,4 @@
-function deleteFuller()
+function deleteFull()
 deleteCheck = deleteCheck or false --just declares new var to use
   deleteLine()
   if DelLPrompt == true then deleteCheck = true end
@@ -9,7 +9,7 @@ deleteCheck = deleteCheck or false --just declares new var to use
   
 end
 
-function deleteFull()
+function deleteFullOld()
   deleteLine()
   tempLineTrigger(1,1,[[if isPrompt() then
     deleteLine()

@@ -478,4 +478,5 @@ end
 
 end
 DelLPrompt = false
+deleteCheck = false
 raiseEvent("LPrompt")

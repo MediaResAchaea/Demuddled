@@ -1,5 +1,5 @@
 local settings = Legacy.Settings.Basher.Classes[gmcp.Char.Status.class] --import Legacy settings to local
-Legacy.Settings.Basher.Rage()
+--Legacy.Settings.Basher.Rage()
 --Legacy basher clickable settings
 cecho("\n<white>- <gold>Legacy Basher settings for: <cyan>"..gmcp.Char.Status.class)
 cechoLink("\n<white>- <cyan>Attack set to:            <ansi_yellow>"..settings.attack, function() appendCmdLine("battack ") end, "Click for cmd to add your own attack", true)
